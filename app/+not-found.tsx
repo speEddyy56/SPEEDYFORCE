@@ -4,10 +4,10 @@ import { Link, Stack } from 'expo-router';
 export default function NotFoundScreen() {
     return (
         <>
-            <Stack.Screen options={{ title: 'Encontrou não' }} />
-            <View style={styles.container}>
-                <Link href="/" style={styles.button}>
-                    Volta pra home aí
+            <Stack.Screen options = {{ title: 'Encontrou nao'}} />
+            <View style = { styles.container }>
+                <Link href="/" style = { styles.button }>
+                Voltar pra pagina principal
                 </Link>
             </View>
         </>

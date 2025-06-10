@@ -82,7 +82,7 @@ export default function tabLayout() {
       />
 
       <Tabs.Screen
-        name="BuscaCEP"
+        name="buscaCEP"
         options={{
           title: 'Buscar CEP',
           tabBarIcon: ({ color, focused }) => (

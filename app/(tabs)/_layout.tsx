@@ -5,49 +5,95 @@ export default function tabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: '#104957',
-        tabBarInactiveTintColor: '#95cfde',       
-        tabBarStyle: {backgroundColor: '#0291b5', borderColor: '#0291b5'},
+        tabBarActiveTintColor: '#d4af37',
+        tabBarInactiveTintColor: '#e6e6e6',
 
-        headerStyle: {
-          backgroundColor: '#0291b5',
+        tabBarStyle: {
+          backgroundColor: '#0f3460',
+          borderTopColor: '#f05454',
+          height: 65,
+          paddingVertical: 8,
         },
 
+        tabBarIconStyle: {
+          marginBottom: 2,
+        },
+
+        tabBarLabelStyle: {
+          fontSize: 11,
+          fontWeight: '600',
+          marginTop: 0,
+        },
+
+        headerStyle: {
+          backgroundColor: '#1a1a2e',
+        },
+        headerTintColor: '#e6e6e6',
+        headerTitleStyle: {
+          color: '#d4af37',
+          fontWeight: 'bold',
+        },
         headerShadowVisible: false,
-        headerTintColor: '#fff',
+
+        tabBarLabelPosition: 'below-icon', // garante texto abaixo do ícone
       }}
     >
+
       <Tabs.Screen
-      name = 'index'
-      options={{
-        title: 'Origem dos Dragões',
-        tabBarIcon: ({color, focused}) => (
-          <Ionicons name={focused ? 'diamond-sharp' : 'diamond-outline'} color = {color} size = {24} />
-        ),
-      }}
+        name="index"
+        options={{
+          title: 'Origem Dragões',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? 'rose-sharp' : 'rose-outline'}
+              color={color}
+              size={26}
+            />
+          ),
+        }}
       />
 
       <Tabs.Screen
-      name = "about"
-      options={{
-        title: 'Povos nórdicos',
-        tabBarIcon: ({color, focused}) => (
-          <Ionicons name={focused ? 'information-circle' : 'information-circle-outline'} color={color} size={24} />
-        ),
-      }}
+        name="about"
+        options={{
+          title: 'Povos Nórdicos',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? 'shield-sharp' : 'shield-outline'}
+              color={color}
+              size={26}
+            />
+          ),
+        }}
       />
 
       <Tabs.Screen
-      name = "toDoList"
-      options={{
-        title: 'Lista de Dragoes',
-        tabBarIcon: ({color, focused}) => (
-          <Ionicons name={focused ? 'layers-sharp' : 'layers-outline'} color={color} size={24} />
-        ),
-      }}
+        name="toDoList"
+        options={{
+          title: 'Lista Dragões',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? 'skull-sharp' : 'skull-outline'}
+              color={color}
+              size={26}
+            />
+          ),
+        }}
       />
-      </Tabs>
 
-      
+      <Tabs.Screen
+        name="BuscaCEP"
+        options={{
+          title: 'Buscar CEP',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? 'search-sharp' : 'search-outline'}
+              color={color}
+              size={26}
+            />
+          ),
+        }}
+      />
+    </Tabs>
   );
 }

@@ -1,5 +1,6 @@
-import { StyleSheet, View, Pressable, Text} from 'react-native';
+import { StyleSheet, View, Pressable, Text } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
+
 type Props = {
     label: string;
     theme?: 'primary';
@@ -12,15 +13,34 @@ export default function Button({ label, theme, onPress }: Props) {
             <View
                 style={[
                     styles.buttonContainer,
-                    { borderWidth: 4, borderColor: '#104957', borderRadius: 18 }
+                    {
+                        borderWidth: 2,
+                        borderColor: '#f05454',
+                        borderRadius: 18,
+                    },
                 ]}
             >
                 <Pressable
-                    style={[styles.button, { backgroundColor: '#0291b5' }]}
+                    style={[
+                        styles.button,
+                        { backgroundColor: '#16213e' },
+                    ]}
                     onPress={onPress}
                 >
-                    <FontAwesome name="picture-o" size={18} color="#380308" style={styles.buttonIcon} />
-                    <Text style={[styles.buttonLabel, { color: '#380308' }]}>{label}</Text>
+                    <FontAwesome
+                        name="picture-o"
+                        size={18}
+                        color="#d4af37"
+                        style={styles.buttonIcon}
+                    />
+                    <Text
+                        style={[
+                            styles.buttonLabel,
+                            { color: '#d4af37' },
+                        ]}
+                    >
+                        {label}
+                    </Text>
                 </Pressable>
             </View>
         );
@@ -28,8 +48,21 @@ export default function Button({ label, theme, onPress }: Props) {
 
     return (
         <View style={styles.buttonContainer}>
-            <Pressable style={styles.button} onPress={() => alert('voce aperto o botao')}>
-                <Text style={styles.buttonLabel}>{label}</Text>
+            <Pressable
+                style={[
+                    styles.button,
+                    { backgroundColor: '#1a1a2e', borderWidth: 1, borderColor: '#d4af37' },
+                ]}
+                onPress={onPress || (() => alert('Você apertou o botão'))}
+            >
+                <Text
+                    style={[
+                        styles.buttonLabel,
+                        { color: '#e6e6e6' },
+                    ]}
+                >
+                    {label}
+                </Text>
             </Pressable>
         </View>
     );
@@ -56,7 +89,7 @@ const styles = StyleSheet.create({
         paddingRight: 8,
     },
     buttonLabel: {
-        color: '#fff',
         fontSize: 14,
+        fontWeight: 'bold',
     },
 });
